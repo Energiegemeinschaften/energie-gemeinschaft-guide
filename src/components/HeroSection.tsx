@@ -30,7 +30,7 @@ const HeroSection: React.FC = () => {
             Energiegemeinschaft
             <span className="block text-primary">gründen</span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed">
             Schritt-für-Schritt zur eigenen Energiegemeinschaft. 
             Wir zeigen Ihnen den Weg und vermitteln zertifizierte Partner für jeden Bereich.
           </p>

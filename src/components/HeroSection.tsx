@@ -62,7 +62,7 @@ const HeroSection: React.FC = () => {
             Jetzt loslegen
             <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
           </Button>
-          <p className="text-sm text-foreground">
+          <p className="text-sm text-primary-dark">
             8 übersichtliche Schritte mit professioneller Unterstützung
           </p>
         </div>

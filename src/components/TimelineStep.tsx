@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { ChevronRight, Clock, LucideIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -90,10 +91,19 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                 </CardDescription>
               </div>
               <div className="flex gap-2">
-                <Badge variant="outline" className="gap-1">
-                  <Clock className="w-3 h-3" />
-                  {duration}
-                </Badge>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Badge variant="outline" className="gap-1">
+                        <Clock className="w-3 h-3" />
+                        {duration}
+                      </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Geschätzte Dauer für diesen Schritt</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
                 <Badge className={getComplexityColor(complexity)}>
                   {complexity}
                 </Badge>

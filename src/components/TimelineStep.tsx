@@ -75,9 +75,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
         >
           {stepNumber}
         </div>
-        {!isLast && (
-          <div className="w-1 h-32 bg-timeline-line mt-4"></div>
-        )}
+        <div className="w-1 h-32 bg-timeline-line mt-4"></div>
       </div>
 
       {/* Content */}

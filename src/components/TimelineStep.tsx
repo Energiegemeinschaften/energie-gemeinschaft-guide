@@ -63,10 +63,11 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
   };
 
   return (
-    <div 
-      ref={stepRef}
-      className={`relative flex gap-8 pb-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
-    >
+    <TooltipProvider>
+      <div 
+        ref={stepRef}
+        className={`relative flex gap-8 pb-12 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}
+      >
       {/* Timeline line and indicator */}
       <div className="flex flex-col items-center">
         <div 
@@ -91,19 +92,17 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                 </CardDescription>
               </div>
               <div className="flex gap-2">
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Badge variant="outline" className="gap-1">
-                        <Clock className="w-3 h-3" />
-                        {duration}
-                      </Badge>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Geschätzte Dauer für diesen Schritt</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Badge variant="outline" className="gap-1">
+                      <Clock className="w-3 h-3" />
+                      {duration}
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Geschätzte Dauer für diesen Schritt</p>
+                  </TooltipContent>
+                </Tooltip>
                 <Badge className={getComplexityColor(complexity)}>
                   {complexity}
                 </Badge>
@@ -138,7 +137,8 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
           </CardContent>
         </Card>
       </div>
-    </div>
+      </div>
+    </TooltipProvider>
   );
 };
 

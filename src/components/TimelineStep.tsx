@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ChevronRight, Clock, Users, AlertTriangle } from 'lucide-react';
+import { ChevronRight, Clock, Zap, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface TimelineStepProps {
@@ -115,7 +115,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
           <CardContent className="pt-6">
             <div className="flex items-start gap-4">
               <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Users className="w-5 h-5 text-primary" />
+                <Zap className="w-5 h-5 text-primary" />
               </div>
               <div className="space-y-3">
                 <h4 className="font-semibold text-foreground">{serviceOffer.title}</h4>

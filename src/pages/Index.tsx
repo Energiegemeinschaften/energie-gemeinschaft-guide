@@ -2,8 +2,20 @@ import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import TimelineStep from '@/components/TimelineStep';
 import { stepsData } from '@/data/stepsData';
+import { Lightbulb, Users, FileText, ShieldCheck, Zap, Database, Settings, Trophy } from 'lucide-react';
 
 const Index = () => {
+  const stepIcons = [
+    Lightbulb,    // Erste Überlegungen & Konzept
+    Users,        // Vereinsgründung
+    FileText,     // Interne Vereinbarungen
+    ShieldCheck,  // Registrierung als Marktpartner
+    Zap,          // Vertrag mit dem Netzbetreiber
+    Database,     // Registrierung in der EDA-Infrastruktur
+    Settings,     // Laufender Betrieb
+    Trophy        // Gratulation & Erfolgskontrolle
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <HeroSection />
@@ -33,6 +45,7 @@ const Index = () => {
                 serviceOffer={step.serviceOffer}
                 isLast={index === stepsData.length - 1}
                 slug={step.slug}
+                icon={stepIcons[index]}
               />
             ))}
           </div>

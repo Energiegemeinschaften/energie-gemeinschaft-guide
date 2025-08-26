@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect } from 'react';
-import { useParams, Link, useLocation } from 'react-router-dom';
+import React, { useLayoutEffect, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -8,18 +8,16 @@ import { stepsData } from '@/data/stepsData';
 
 const StepDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const location = useLocation();
   const step = stepsData.find(s => s.slug === slug);
 
-  Force scroll to top on every page render - works for all navigation types
+
   useLayoutEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }, []);
 
-  // Smooth scroll for any route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
+  }, [slug]);
 
   if (!step) {
     return (
@@ -177,12 +175,16 @@ const StepDetail: React.FC = () => {
             </div>
 
             <div className="flex gap-3">
-              <Button className="bg-primary hover:bg-primary/90">
-                {step.serviceOffer.ctaText}
+              <Button className="bg-primary hover:bg-primary/90" asChild>
+                <a href={`mailto:software@alber.contact?subject=Energiegemeinschaft - ${step.serviceOffer.ctaText}&body=Hallo,%0D%0A%0D%0AIch interessiere mich für die professionelle Unterstützung für: ${step.serviceOffer.ctaText}%0D%0A%0D%0ABitte kontaktieren Sie mich für weitere Informationen.%0D%0A%0D%0AVielen Dank!`}>
+                  {step.serviceOffer.ctaText}
+                </a>
               </Button>
-              <Button variant="outline" className="gap-2">
-                <Phone className="w-4 h-4" />
-                Beratung anfordern
+              <Button variant="outline" className="gap-2" asChild>
+                <a href="https://calendly.com/laura-stefan-so-strom/30min" target="_blank" rel="noopener noreferrer">
+                  <Phone className="w-4 h-4" />
+                  Beratung anfordern
+                </a>
               </Button>
             </div>
           </CardContent>

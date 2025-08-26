@@ -310,7 +310,7 @@ export const stepsData: StepData[] = [
   },
   {
     stepNumber: 8,
-    title: "Gratulation & Erfolgskontrolle",
+    title: "Jahresabschluss & Erfolgskontrolle",
     description: "Erfolg messen und optimieren",
     duration: "Jährlich",
     complexity: "niedrig",

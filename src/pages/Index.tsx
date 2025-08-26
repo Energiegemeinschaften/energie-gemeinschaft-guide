@@ -50,9 +50,14 @@ const Index = () => {
           </h3>
           <p className="text-xl text-muted-foreground">Unsere zertifizierten Partner unterstützen Sie bei jedem Schritt</p>
           <div className="flex justify-center">
-            <button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg">
+            <a 
+              href="https://calendly.com/laura-stefan-so-strom/30min" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg inline-block"
+            >
               Kostenlose Erstberatung
-            </button>
+            </a>
           </div>
         </div>
       </section>

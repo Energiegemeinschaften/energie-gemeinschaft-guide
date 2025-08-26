@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +9,11 @@ import { stepsData } from '@/data/stepsData';
 const StepDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const step = stepsData.find(s => s.slug === slug);
+
+  // Smooth scroll to top when navigating to detail page
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
 
   if (!step) {
     return (
@@ -26,12 +31,12 @@ const StepDetail: React.FC = () => {
     );
   }
 
-  const getComplexityColor = (complexity: string) => {
+  const getComplexityVariant = (complexity: string) => {
     switch (complexity) {
-      case 'niedrig': return 'bg-success text-success-foreground';
-      case 'mittel': return 'bg-accent text-accent-foreground';
-      case 'hoch': return 'bg-destructive text-destructive-foreground';
-      default: return 'bg-muted text-muted-foreground';
+      case 'niedrig': return 'success' as const;
+      case 'mittel': return 'accent' as const;
+      case 'hoch': return 'destructive' as const;
+      default: return 'secondary' as const;
     }
   };
 
@@ -52,7 +57,7 @@ const StepDetail: React.FC = () => {
                 <Clock className="w-3 h-3" />
                 {step.duration}
               </Badge>
-              <Badge className={getComplexityColor(step.complexity)}>
+              <Badge variant={getComplexityVariant(step.complexity)}>
                 {step.complexity}
               </Badge>
             </div>

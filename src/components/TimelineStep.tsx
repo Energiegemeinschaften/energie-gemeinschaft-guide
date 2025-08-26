@@ -53,12 +53,12 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
     return () => observer.disconnect();
   }, []);
 
-  const getComplexityColor = (complexity: string) => {
+  const getComplexityVariant = (complexity: string) => {
     switch (complexity) {
-      case 'niedrig': return 'bg-success text-success-foreground';
-      case 'mittel': return 'bg-accent text-accent-foreground';
-      case 'hoch': return 'bg-destructive text-destructive-foreground';
-      default: return 'bg-muted text-muted-foreground';
+      case 'niedrig': return 'success' as const;
+      case 'mittel': return 'accent' as const;
+      case 'hoch': return 'destructive' as const;
+      default: return 'secondary' as const;
     }
   };
 
@@ -103,7 +103,7 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                     <p>Geschätzte Dauer für diesen Schritt</p>
                   </TooltipContent>
                 </Tooltip>
-                <Badge className={getComplexityColor(complexity)}>
+                <Badge variant={getComplexityVariant(complexity)}>
                   {complexity}
                 </Badge>
               </div>

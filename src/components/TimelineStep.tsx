@@ -118,24 +118,6 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
             </Link>
           </CardContent>
         </Card>
-
-        {/* Service offer callout */}
-        <Card className="bg-gradient-to-r from-accent/20 to-primary/10 border-primary/20">
-          <CardContent className="pt-6">
-            <div className="flex items-start gap-4">
-              <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-5 h-5 text-primary" />
-              </div>
-              <div className="space-y-3">
-                <h4 className="font-semibold text-foreground">{serviceOffer.title}</h4>
-                <p className="text-sm text-muted-foreground">{serviceOffer.description}</p>
-                <Button variant="default" size="sm" className="bg-primary hover:bg-primary/90">
-                  {serviceOffer.ctaText}
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
       </div>
       </div>
     </TooltipProvider>

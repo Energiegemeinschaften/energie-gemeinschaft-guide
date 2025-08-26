@@ -12,7 +12,18 @@ const StepDetail: React.FC = () => {
 
   // Smooth scroll to top when navigating to detail page
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Use a small delay to ensure the page has fully loaded
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+    
+    // Immediate scroll for initial load
+    scrollToTop();
+    
+    // Also scroll after a short delay to handle any layout shifts
+    const timeoutId = setTimeout(scrollToTop, 100);
+    
+    return () => clearTimeout(timeoutId);
   }, [slug]);
 
   if (!step) {

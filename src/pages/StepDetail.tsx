@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -8,6 +8,7 @@ import { stepsData } from '@/data/stepsData';
 
 const StepDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const location = useLocation();
   const step = stepsData.find(s => s.slug === slug);
 
   // Force scroll to top on every page render - works for all navigation types
@@ -15,10 +16,10 @@ const StepDetail: React.FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Additional smooth scroll for route changes
+  // Smooth scroll for any route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [step?.stepNumber]);
+  }, [location.pathname]);
 
   if (!step) {
     return (

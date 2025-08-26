@@ -12,9 +12,9 @@ const StepDetail: React.FC = () => {
   const step = stepsData.find(s => s.slug === slug);
 
   // Force scroll to top on every page render - works for all navigation types
-  useLayoutEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  // useLayoutEffect(() => {
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   // Smooth scroll for any route change
   useEffect(() => {

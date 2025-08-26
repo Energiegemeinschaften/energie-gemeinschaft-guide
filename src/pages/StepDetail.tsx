@@ -21,6 +21,8 @@ const StepDetail: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
   if (!step) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">

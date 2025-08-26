@@ -11,17 +11,15 @@ const StepDetail: React.FC = () => {
   const location = useLocation();
   const step = stepsData.find(s => s.slug === slug);
 
-  // Force scroll to top on every page render - works for all navigation types
-  // useLayoutEffect(() => {
-  //   window.scrollTo(0, 0);
-  // }, []);
+  Force scroll to top on every page render - works for all navigation types
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   // Smooth scroll for any route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
-
-  window.scrollTo({ top: 0, behavior: 'smooth' });
 
   if (!step) {
     return (

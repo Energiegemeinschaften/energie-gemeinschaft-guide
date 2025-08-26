@@ -2,8 +2,21 @@ import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import TimelineStep from '@/components/TimelineStep';
 import { stepsData } from '@/data/stepsData';
+import { homeSEO, homeStructuredData } from '@/data/seoData';
+import { useSEO } from '@/hooks/useSeo';
 import { Lightbulb, Users, FileText, ShieldCheck, Zap, Database, Settings, Trophy } from 'lucide-react';
 const Index = () => {
+  // Apply SEO for home page
+  useSEO({
+    title: homeSEO.title,
+    description: homeSEO.description,
+    keywords: homeSEO.keywords,
+    ogTitle: homeSEO.ogTitle,
+    ogDescription: homeSEO.ogDescription,
+    canonical: homeSEO.canonical,
+    structuredData: homeStructuredData
+  });
+
   const stepIcons = [Lightbulb,
   // Erste Überlegungen & Konzept
   Users,

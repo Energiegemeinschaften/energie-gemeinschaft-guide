@@ -5,11 +5,74 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Badge } from '@/components/ui/badge';
 import { ArrowLeft, Clock, Users, AlertTriangle, CheckCircle, FileText, Phone } from 'lucide-react';
 import { stepsData } from '@/data/stepsData';
+import { generateStepSEO, generateStepStructuredData } from '@/data/seoData';
+import { useSEO } from '@/hooks/useSeo';
 
 const StepDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const step = stepsData.find(s => s.slug === slug);
 
+  // Apply SEO for step page
+  useEffect(() => {
+    if (step) {
+      const seoData = generateStepSEO(step);
+      const structuredData = generateStepStructuredData(step);
+      
+      // Use a separate effect to apply SEO
+      const applyStepSEO = () => {
+        // Update title
+        document.title = seoData.title;
+        
+        // Update meta tags
+        const updateMetaTag = (name: string, content: string) => {
+          let element = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
+          if (!element) {
+            element = document.createElement('meta');
+            element.name = name;
+            document.head.appendChild(element);
+          }
+          element.content = content;
+        };
+
+        const updatePropertyTag = (property: string, content: string) => {
+          let element = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement;
+          if (!element) {
+            element = document.createElement('meta');
+            element.setAttribute('property', property);
+            document.head.appendChild(element);
+          }
+          element.content = content;
+        };
+
+        updateMetaTag('description', seoData.description);
+        updateMetaTag('keywords', seoData.keywords);
+        updatePropertyTag('og:title', seoData.ogTitle);
+        updatePropertyTag('og:description', seoData.ogDescription);
+
+        // Update canonical URL
+        let link = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+        if (!link) {
+          link = document.createElement('link');
+          link.rel = 'canonical';
+          document.head.appendChild(link);
+        }
+        link.href = seoData.canonical;
+
+        // Add structured data
+        const existingScript = document.querySelector('script[type="application/ld+json"]');
+        if (existingScript) {
+          existingScript.remove();
+        }
+        
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.textContent = JSON.stringify(structuredData);
+        document.head.appendChild(script);
+      };
+
+      applyStepSEO();
+    }
+  }, [step]);
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);

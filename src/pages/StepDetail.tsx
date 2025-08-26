@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -10,21 +10,15 @@ const StepDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const step = stepsData.find(s => s.slug === slug);
 
-  // Smooth scroll to top when navigating to detail page
+  // Force scroll to top on every page render - works for all navigation types
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Additional smooth scroll for route changes
   useEffect(() => {
-    // Use a small delay to ensure the page has fully loaded
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-    
-    // Immediate scroll for initial load
-    scrollToTop();
-    
-    // Also scroll after a short delay to handle any layout shifts
-    const timeoutId = setTimeout(scrollToTop, 100);
-    
-    return () => clearTimeout(timeoutId);
-  }, [slug]);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [step?.stepNumber]);
 
   if (!step) {
     return (

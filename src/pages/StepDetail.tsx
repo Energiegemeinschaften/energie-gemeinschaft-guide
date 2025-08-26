@@ -181,7 +181,7 @@ const StepDetail: React.FC = () => {
                 </a>
               </Button>
               <Button variant="outline" className="gap-2" asChild>
-                <a href="https://calendly.com/laura-stefan-so-strom/30min" target="_blank" rel="noopener noreferrer">
+                <a href="mailto:software@alber.contact?subject=Beratung zum Thema Energiegemeinschaft&body=Hallo,%0D%0A%0D%0AIch möchte zum Thema Energiegemeinschaft beraten werden.%0D%0A%0D%0AMeine Kontaktdaten:%0D%0ATelefon: [Bitte hier eintragen]%0D%0AE-Mail: [Bitte hier eintragen]%0D%0AAdresse: [Bitte hier eintragen]%0D%0A%0D%0ABevorzugter Kontakt: [ ] Telefon [ ] E-Mail [ ] Video-Call%0D%0ABevorzugte Zeit: [Bitte hier eintragen]%0D%0A%0D%0AKurze Beschreibung meines Projekts:%0D%0A[Bitte hier eintragen]%0D%0A%0D%0AVielen Dank für Ihre Unterstützung!%0D%0A%0D%0AMit freundlichen Grüßen">
                   <Phone className="w-4 h-4" />
                   Beratung anfordern
                 </a>

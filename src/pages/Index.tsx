@@ -51,9 +51,7 @@ const Index = () => {
           <p className="text-xl text-muted-foreground">Unsere zertifizierten Partner unterstützen Sie bei jedem Schritt</p>
           <div className="flex justify-center">
             <a 
-              href="https://calendly.com/laura-stefan-so-strom/30min" 
-              target="_blank" 
-              rel="noopener noreferrer"
+              href="mailto:software@alber.contact?subject=Kostenlose Erstberatung - Energiegemeinschaft&body=Hallo,%0D%0A%0D%0AIch interessiere mich für eine kostenlose Erstberatung zum Thema Energiegemeinschaft.%0D%0A%0D%0AMeine Kontaktdaten:%0D%0ATelefon: [Bitte hier eintragen]%0D%0AE-Mail: [Bitte hier eintragen]%0D%0AAdresse: [Bitte hier eintragen]%0D%0A%0D%0ABevorzugter Kontakt: [ ] Telefon [ ] E-Mail [ ] Video-Call%0D%0ABevorzugte Zeit: [Bitte hier eintragen]%0D%0A%0D%0AKurze Beschreibung meines Projekts:%0D%0A[Bitte hier eintragen]%0D%0A%0D%0AVielen Dank für Ihre Unterstützung!%0D%0A%0D%0AMit freundlichen Grüßen"
               className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg inline-block"
             >
               Kostenlose Erstberatung

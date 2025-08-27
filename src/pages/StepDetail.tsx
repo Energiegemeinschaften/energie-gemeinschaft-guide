@@ -239,12 +239,12 @@ const StepDetail: React.FC = () => {
 
             <div className="flex gap-3">
               <Button className="bg-primary hover:bg-primary/90" asChild>
-                <a href={`mailto:software@alber.contact?subject=Energiegemeinschaft - ${step.serviceOffer.ctaText}&body=Hallo,%0D%0A%0D%0AIch interessiere mich für die professionelle Unterstützung für: ${step.serviceOffer.ctaText}%0D%0A%0D%0ABitte kontaktieren Sie mich für weitere Informationen.%0D%0A%0D%0AVielen Dank!`}>
+                <a href={`mailto:info@energiegemeinschaft-gruenden.at?subject=Energiegemeinschaft - ${step.serviceOffer.ctaText}&body=Hallo,%0D%0A%0D%0AIch interessiere mich für die professionelle Unterstützung für: ${step.serviceOffer.ctaText}%0D%0A%0D%0ABitte kontaktieren Sie mich für weitere Informationen.%0D%0A%0D%0AVielen Dank!`}>
                   {step.serviceOffer.ctaText}
                 </a>
               </Button>
               <Button variant="outline" className="gap-2" asChild>
-                <a href="mailto:software@alber.contact?subject=Beratung zum Thema Energiegemeinschaft&body=Hallo,%0D%0A%0D%0AIch möchte zum Thema Energiegemeinschaft beraten werden.%0D%0A%0D%0AMeine Kontaktdaten:%0D%0ATelefon: [Bitte hier eintragen]%0D%0AE-Mail: [Bitte hier eintragen]%0D%0AAdresse: [Bitte hier eintragen]%0D%0A%0D%0ABevorzugter Kontakt: [ ] Telefon [ ] E-Mail [ ] Video-Call%0D%0ABevorzugte Zeit: [Bitte hier eintragen]%0D%0A%0D%0AKurze Beschreibung meines Projekts:%0D%0A[Bitte hier eintragen]%0D%0A%0D%0AVielen Dank für Ihre Unterstützung!%0D%0A%0D%0AMit freundlichen Grüßen">
+                <a href="mailto:info@energiegemeinschaft-gruenden.at?subject=Beratung zum Thema Energiegemeinschaft&body=Hallo,%0D%0A%0D%0AIch möchte zum Thema Energiegemeinschaft beraten werden.%0D%0A%0D%0AMeine Kontaktdaten:%0D%0ATelefon: [Bitte hier eintragen]%0D%0AE-Mail: [Bitte hier eintragen]%0D%0AAdresse: [Bitte hier eintragen]%0D%0A%0D%0ABevorzugter Kontakt: [ ] Telefon [ ] E-Mail [ ] Video-Call%0D%0ABevorzugte Zeit: [Bitte hier eintragen]%0D%0A%0D%0AKurze Beschreibung meines Projekts:%0D%0A[Bitte hier eintragen]%0D%0A%0D%0AVielen Dank für Ihre Unterstützung!%0D%0A%0D%0AMit freundlichen Grüßen">
                   <Phone className="w-4 h-4" />
                   Beratung anfordern
                 </a>

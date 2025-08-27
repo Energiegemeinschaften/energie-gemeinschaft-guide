@@ -103,9 +103,16 @@ const TimelineStep: React.FC<TimelineStepProps> = ({
                     <p>Geschätzte Dauer für diesen Schritt</p>
                   </TooltipContent>
                 </Tooltip>
-                <Badge variant={getComplexityVariant(complexity)}>
-                  {complexity}
-                </Badge>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Badge variant={getComplexityVariant(complexity)}>
+                      {complexity}
+                    </Badge>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    <p>Komplexitätsgrad für diesen Schritt</p>
+                  </TooltipContent>
+                </Tooltip>
               </div>
             </div>
           </CardHeader>

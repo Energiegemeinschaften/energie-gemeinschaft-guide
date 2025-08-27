@@ -5,9 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // Set base path for GitHub Pages deployment
-  // This will be ignored when using a custom domain (CNAME file present)
-  base: process.env.NODE_ENV === 'production' ? '/energie-gemeinschaft-guide/' : '/',
+  // Set base path - use root for custom domain
+  base: '/',
   server: {
     host: "::",
     port: 8080,

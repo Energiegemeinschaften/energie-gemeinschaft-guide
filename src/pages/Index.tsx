@@ -2,11 +2,14 @@ import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import TimelineStep from '@/components/TimelineStep';
 import { stepsData } from '@/data/stepsData';
-import { homeSEO, homeStructuredData, faqStructuredData } from '@/data/seoData';
+import { homeSEO, homeStructuredData } from '@/data/seoData';
+import { faqPageQuestions, homepageFAQQuestions, generateFAQStructuredData } from '@/data/faqData';
 import { useSEO } from '@/hooks/useSeo';
 import { Lightbulb, Users, FileText, ShieldCheck, Zap, Database, Settings, Trophy } from 'lucide-react';
 const Index = () => {
   // Apply SEO for home page with enhanced 2025 schema markup
+  const allFAQs = [...faqPageQuestions, ...homepageFAQQuestions];
+  const combinedStructuredData = generateFAQStructuredData(allFAQs);
   useSEO({
     title: homeSEO.title,
     description: homeSEO.description,
@@ -14,7 +17,7 @@ const Index = () => {
     ogTitle: homeSEO.ogTitle,
     ogDescription: homeSEO.ogDescription,
     canonical: homeSEO.canonical,
-    structuredData: [...homeStructuredData, faqStructuredData]
+    structuredData: [...homeStructuredData, combinedStructuredData]
   });
 
   const stepIcons = [Lightbulb,
@@ -55,7 +58,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Official Guide Reference */}
+      {/* Official Guide Reference
       <section className="py-16 bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/10 dark:to-blue-900/10">
         <div className="max-w-4xl mx-auto px-6">
           <div className="bg-white dark:bg-gray-800/50 rounded-xl p-8 shadow-lg border border-blue-200 dark:border-blue-800">
@@ -88,7 +91,7 @@ const Index = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Footer CTA */}
       <section className="py-20 bg-gradient-to-r from-primary/10 to-primary-glow/10">

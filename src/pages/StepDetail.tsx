@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Clock, Users, AlertTriangle, CheckCircle, FileText, Phone, Home } from 'lucide-react';
+import { ArrowLeft, Clock, Users, AlertTriangle, CheckCircle, FileText, Phone, Home, ExternalLink, Info, Settings } from 'lucide-react';
 import { stepsData } from '@/data/stepsData';
 import { generateStepSEO, generateStepStructuredData } from '@/data/seoData';
 import { useSEO } from '@/hooks/useSeo';
@@ -159,11 +159,12 @@ const StepDetail: React.FC = () => {
           </CardContent>
         </Card>
 
+
         {/* Requirements */}
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <AlertTriangle className="w-5 h-5 text-accent-foreground" />
+              <AlertTriangle className="w-5 h-5 text-primary" />
               Voraussetzungen
             </CardTitle>
           </CardHeader>
@@ -182,7 +183,10 @@ const StepDetail: React.FC = () => {
         {/* Steps to complete */}
         <Card>
           <CardHeader>
-            <CardTitle>Durchführung</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <Settings className="w-5 h-5 text-primary" />
+              Durchführung
+            </CardTitle>
             <CardDescription>So gehen Sie konkret vor</CardDescription>
           </CardHeader>
           <CardContent>
@@ -251,6 +255,31 @@ const StepDetail: React.FC = () => {
                 </a>
               </Button>
             </div>
+          </CardContent>
+        </Card>
+
+        {/* Additional Information Links */}
+        <Card className="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 border-blue-200 dark:border-blue-800">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Info className="w-5 h-5 text-blue-600" />
+              Weitere Informationen
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-3">
+              <li>
+                <a 
+                  href={step.officialGuideUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                >
+                  <ExternalLink className="w-4 h-4 flex-shrink-0" />
+                  <span>Offizieller Leitfaden (Klima- und Energiefonds)</span>
+                </a>
+              </li>
+            </ul>
           </CardContent>
         </Card>
 

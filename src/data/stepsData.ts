@@ -10,6 +10,7 @@ export interface StepData {
     ctaText: string;
   };
   slug: string;
+  officialGuideUrl: string;
   detailContent: {
     overview: string;
     requirements: string[];
@@ -28,6 +29,7 @@ export const stepsData: StepData[] = [
     duration: "2-4 Wochen",
     complexity: "niedrig",
     slug: "erste-ueberlegungen-konzept",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/1-erste-ueberlegungen-konzept/",
     serviceOffer: {
       title: "Professionelle Machbarkeitsstudie",
       description: "Unsere zertifizierten Partner erstellen eine umfassende Analyse Ihres Vorhabens und bewerten das Potenzial Ihrer geplanten Energiegemeinschaft.",
@@ -69,6 +71,7 @@ export const stepsData: StepData[] = [
     duration: "4-6 Wochen",
     complexity: "mittel",
     slug: "vereinsgruendung",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/2-vereinsgruendung/",
     serviceOffer: {
       title: "Rechtssichere Vereinsgründung",
       description: "Mit zunehmender Komplexität der rechtlichen Anforderungen empfehlen wir die Unterstützung durch Experten für eine fehlerfreie Gründung.",
@@ -110,6 +113,7 @@ export const stepsData: StepData[] = [
     duration: "3-5 Wochen",
     complexity: "mittel",
     slug: "interne-vereinbarungen",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/3-interne-vereinbarungen/",
     serviceOffer: {
       title: "Rechtskonforme Vertragsgestaltung",
       description: "Damit das Ehrenamt nicht zum Vollzeitjob wird: Unsere Rechtsexperten erstellen alle notwendigen internen Vereinbarungen rechtssicher und praxistauglich.",
@@ -151,6 +155,7 @@ export const stepsData: StepData[] = [
     duration: "6-8 Wochen",
     complexity: "hoch",
     slug: "registrierung-marktpartner",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/4-registrierung-als-marktpartner/",
     serviceOffer: {
       title: "Als Obmann Haftungsrisiken minimieren",
       description: "Die Registrierung als Marktpartner bringt umfangreiche Pflichten mit sich. Unsere zertifizierten Partner übernehmen diese Verantwortung und minimieren Ihr persönliches Risiko.",
@@ -192,6 +197,7 @@ export const stepsData: StepData[] = [
     duration: "4-6 Wochen",
     complexity: "hoch",
     slug: "vertrag-netzbetreiber",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/5-vertrag-mit-dem-netzbetreiber/",
     serviceOffer: {
       title: "Nutzen Sie eine automatisierte Plattform",
       description: "Moderne IT-Lösungen automatisieren die komplexe Kommunikation mit Netzbetreibern und reduzieren den administrativen Aufwand erheblich.",
@@ -233,6 +239,7 @@ export const stepsData: StepData[] = [
     duration: "3-4 Wochen",
     complexity: "hoch",
     slug: "registrierung-eda-infrastruktur",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/6-registrierung-in-der-eda-infrastruktur/",
     serviceOffer: {
       title: "Unser zertifizierter Partner kann das alles für Sie übernehmen",
       description: "Die EDA-Registrierung erfordert tiefgreifende IT-Kenntnisse. Lassen Sie Experten diese komplexe Systemintegration durchführen.",
@@ -274,6 +281,7 @@ export const stepsData: StepData[] = [
     duration: "Kontinuierlich",
     complexity: "mittel",
     slug: "laufender-betrieb",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/7-laufender-betrieb/",
     serviceOffer: {
       title: "Mit zunehmender Anzahl an Mitgliedern steigt der Aufwand",
       description: "Professionelle Betriebsführung entlastet Sie von der täglichen Administration und sorgt für rechtskonforme Abwicklung aller Prozesse.",
@@ -315,6 +323,7 @@ export const stepsData: StepData[] = [
     duration: "Jährlich",
     complexity: "niedrig",
     slug: "gratulation-erfolgskontrolle",
+    officialGuideUrl: "https://energiegemeinschaften.gv.at/8-gratulation/",
     serviceOffer: {
       title: "Kontinuierliche Optimierung",
       description: "Regelmäßige Erfolgsanalysen und Optimierungsvorschläge halten Ihre Energiegemeinschaft auf Erfolgskurs und maximieren den Nutzen für alle Beteiligten.",

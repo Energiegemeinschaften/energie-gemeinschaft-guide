@@ -187,7 +187,7 @@ const StepDetail: React.FC = () => {
               <Settings className="w-5 h-5 text-primary" />
               Durchführung
             </CardTitle>
-            <CardDescription>So gehen Sie konkret vor</CardDescription>
+            <CardDescription className="text-base font-medium">So gehen Sie konkret vor:</CardDescription>
           </CardHeader>
           <CardContent>
             <ol className="space-y-4">
@@ -221,24 +221,49 @@ const StepDetail: React.FC = () => {
             </div>
             
             <div className="bg-card/50 p-4 rounded-lg space-y-3">
-              <h5 className="font-medium text-foreground">Vorteile der professionellen Betreuung:</h5>
+              <h5 className="font-medium text-foreground">
+                {step.stepNumber === 7 ? "Vorteile der Software-Lösung:" : "Vorteile der professionellen Betreuung:"}
+              </h5>
               <ul className="space-y-1 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-success" />
-                  Zeitersparnis durch Expertise
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-success" />
-                  Minimierung von Haftungsrisiken
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-success" />
-                  Rechtssichere Durchführung
-                </li>
-                <li className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-success" />
-                  Laufende Betreuung verfügbar
-                </li>
+                {step.stepNumber === 7 ? (
+                  <>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Automatisierte Abrechnungen und Reports
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Echtzeit-Monitoring der Energieflüsse
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Effiziente Mitgliederverwaltung
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Sie behalten die vollständige Kontrolle
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Zeitersparnis durch Expertise
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Minimierung von Haftungsrisiken
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Rechtssichere Durchführung
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <CheckCircle className="w-4 h-4 text-success" />
+                      Laufende Betreuung verfügbar
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
 

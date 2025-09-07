@@ -284,8 +284,8 @@ export const stepsData: StepData[] = [
     officialGuideUrl: "https://energiegemeinschaften.gv.at/7-laufender-betrieb/",
     serviceOffer: {
       title: "Mit zunehmender Anzahl an Mitgliedern steigt der Aufwand",
-      description: "Professionelle Betriebsführung entlastet Sie von der täglichen Administration und sorgt für rechtskonforme Abwicklung aller Prozesse.",
-      ctaText: "Betriebsführung übertragen"
+      description: "Professionelle Verwaltungssoftware automatisiert Abrechnungen, Monitoring und Mitgliederverwaltung. Behalten Sie die Kontrolle über Ihre Gemeinschaft mit den richtigen digitalen Tools.",
+      ctaText: "Software-Lösung anfragen"
     },
     detailContent: {
       overview: "Der laufende Betrieb einer Energiegemeinschaft umfasst zahlreiche administrative, technische und kaufmännische Aufgaben. Eine strukturierte Herangehensweise und klare Prozesse sind entscheidend für den langfristigen Erfolg.",

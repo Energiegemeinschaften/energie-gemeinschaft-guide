@@ -115,6 +115,7 @@ const StepDetail: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <Link to="/">
               <Button variant="outline" size="sm">
+                <ArrowLeft className="w-4 h-4 mr-2" />
                 <Home className="w-4 h-4" />
               </Button>
             </Link>

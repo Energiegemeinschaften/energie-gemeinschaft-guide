@@ -114,8 +114,7 @@ const StepDetail: React.FC = () => {
         <div className="max-w-4xl mx-auto px-6 py-8">
           <div className="flex items-center gap-4 mb-6">
             <Link to="/">
-              <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4" />
+              <Button variant="ghost" size="sm" className="hover:bg-primary/10">
                 <Home className="w-4 h-4" />
               </Button>
             </Link>

@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, Clock, Users, AlertTriangle, CheckCircle, FileText, Phone } from 'lucide-react';
+import { ArrowLeft, Clock, Users, AlertTriangle, CheckCircle, FileText, Phone, Home } from 'lucide-react';
 import { stepsData } from '@/data/stepsData';
 import { generateStepSEO, generateStepStructuredData } from '@/data/seoData';
 import { useSEO } from '@/hooks/useSeo';
@@ -115,8 +115,7 @@ const StepDetail: React.FC = () => {
           <div className="flex items-center gap-4 mb-6">
             <Link to="/">
               <Button variant="outline" size="sm">
-                <ArrowLeft className="w-4 h-4 mr-2" />
-                Zurück
+                <Home className="w-4 h-4" />
               </Button>
             </Link>
             <div className="flex gap-2">

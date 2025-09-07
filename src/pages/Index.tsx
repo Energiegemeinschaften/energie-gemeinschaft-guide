@@ -2,11 +2,11 @@ import React from 'react';
 import HeroSection from '@/components/HeroSection';
 import TimelineStep from '@/components/TimelineStep';
 import { stepsData } from '@/data/stepsData';
-import { homeSEO, homeStructuredData } from '@/data/seoData';
+import { homeSEO, homeStructuredData, faqStructuredData } from '@/data/seoData';
 import { useSEO } from '@/hooks/useSeo';
 import { Lightbulb, Users, FileText, ShieldCheck, Zap, Database, Settings, Trophy } from 'lucide-react';
 const Index = () => {
-  // Apply SEO for home page
+  // Apply SEO for home page with enhanced 2025 schema markup
   useSEO({
     title: homeSEO.title,
     description: homeSEO.description,
@@ -14,7 +14,7 @@ const Index = () => {
     ogTitle: homeSEO.ogTitle,
     ogDescription: homeSEO.ogDescription,
     canonical: homeSEO.canonical,
-    structuredData: homeStructuredData
+    structuredData: [...homeStructuredData, faqStructuredData]
   });
 
   const stepIcons = [Lightbulb,

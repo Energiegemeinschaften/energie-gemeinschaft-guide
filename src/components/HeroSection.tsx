@@ -55,15 +55,7 @@ const HeroSection: React.FC = () => {
 
         {/* CTA Buttons */}
         <div className="space-y-4">
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              onClick={scrollToTimeline}
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold group animate-glow-pulse"
-            >
-              Jetzt loslegen
-              <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
-            </Button>
+          <div className="flex flex-col gap-4 items-center">
             <Button 
               asChild
               variant="outline"
@@ -73,6 +65,14 @@ const HeroSection: React.FC = () => {
               <Link to="/faq">
                 Häufige Fragen
               </Link>
+            </Button>
+            <Button 
+              onClick={scrollToTimeline}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold group animate-glow-pulse"
+            >
+              Jetzt loslegen
+              <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
             </Button>
           </div>
           <p className="text-sm text-primary-dark">

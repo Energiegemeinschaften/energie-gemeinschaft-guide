@@ -67,11 +67,10 @@ const HeroSection: React.FC = () => {
             <Button 
               asChild
               variant="outline"
-              size="lg"
-              className="px-8 py-4 text-lg font-semibold border-primary/20 hover:bg-primary/10"
+              size="default"
+              className="px-6 py-2 font-semibold border-primary/20 hover:bg-primary/10"
             >
               <Link to="/faq">
-                <HelpCircle className="w-5 h-5 mr-2" />
                 Häufige Fragen
               </Link>
             </Button>

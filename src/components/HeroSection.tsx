@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, Zap, Users, Leaf } from 'lucide-react';
+import { ArrowDown, Zap, Users, Leaf, HelpCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-energy-community.jpg';
 
 const HeroSection: React.FC = () => {
@@ -52,16 +53,29 @@ const HeroSection: React.FC = () => {
           </div>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Buttons */}
         <div className="space-y-4">
-          <Button 
-            onClick={scrollToTimeline}
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold group animate-glow-pulse"
-          >
-            Jetzt loslegen
-            <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              onClick={scrollToTimeline}
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold group animate-glow-pulse"
+            >
+              Jetzt loslegen
+              <ArrowDown className="w-5 h-5 ml-2 group-hover:translate-y-1 transition-transform" />
+            </Button>
+            <Button 
+              asChild
+              variant="outline"
+              size="lg"
+              className="px-8 py-4 text-lg font-semibold border-primary/20 hover:bg-primary/10"
+            >
+              <Link to="/faq">
+                <HelpCircle className="w-5 h-5 mr-2" />
+                Häufige Fragen
+              </Link>
+            </Button>
+          </div>
           <p className="text-sm text-primary-dark">
             In 8 übersichtlichen Schritten zur eigenen Gemeinschaft
           </p>
